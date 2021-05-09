@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap");
+
+/* Dashboard Js */
+/* Maindiv - Black-body. */
+.maindiv {
+  background-color: black !important;
+  height: 87vh;
+  position: relative;
+}
+.maindiv-sider {
+  width: 200px;
+}
+.maindiv-track {
+  background-color: #31a2ff;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+}
+.maindiv-track ul {
+  list-style-type: none;
+}
+.maindiv-form {
+  position: relative;
+}
+.maindiv-form-span {
+  color: #fff;
+  font-size: 21px;
+  font-family: Roboto, sans-serif;
+  padding: inherit;
+}
+.maindiv-radio span {
+  font-size: 15px;
+}
+.maindiv-input-button {
+  background-color: #31a2ff !important;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .maindiv-radio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    position: relative;
+  }
+  .maindiv-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+  }
+}
+.maindiv2 {
+  background-color: #31a2ff !important;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.delivery-number {
+  font-family: Roboto, sans-serif;
+  font-weight: 700px;
+  font-size: 21px;
+}
+.maindiv3 {
+  background-color: black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.maindiv3-h2-1 {
+  color: #31a2ff;
+}
+.maindiv3-h2-2 {
+  color: #fff;
+}
+.maindiv4-name {
+  font-family: Roboto, sans-serif;
+}
+.maindiv-content {
+  font-size: 20px;
+}
+.maindiv4-button {
+  background-color: #31a2ff;
+  color: #fff;
+}
+.maindiv5-name {
+  font-family: Roboto, sans-serif;
+}
+.maindiv5-content {
+  font-size: 20px;
+}
+.maindiv5-button {
+  background-color: #31a2ff;
+  color: white;
+}
+.maindiv6-name {
+  font-family: Roboto, sans-serif;
+}
+.maindiv6-button {
+  font-family: Roboto, sans-serif;
+}
+.maindiv6-button button {
+  background-color: #31a2ff;
+  color: #fff;
+}
+.maindiv6-first {
+  background-color: black;
+}
+.maindiv6-first-content {
+  font-family: Roboto, sans-serif;
+  color: #fff;
+}
+.maindiv6-first-img img {
+  min-height: 300px;
+}
+.maindiv6-second-firstBox {
+  background-color: black;
+  color: #fff;
+  min-height: 180px;
+}
+.maindiv6-second-secoundBox {
+  background-color: black;
+  color: #fff;
+  min-height: 180px;
+}
+
+/* Page Common css. */
+.header-image {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.header-name {
+  padding-top: 100px;
+}
+.header-content {
+  font-family: Noto Sans JP, sans-serif;
+  font-size: 20px;
+}
+.header-button {
+  font-size: 15px;
+}
+.header-button button {
+  color: white;
+  width: 20%;
+  height: 40px;
+  border: 1px solid;
+  background-color: unset;
+}
+.header-button button:hover {
+  background-color: #31a2ff;
+}
+.header-content-input input {
+  height: 65px !important;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+}
+
+/* AboutUs JS */
+.body-track {
+  width: 100%;
+  min-height: 400px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.company-history {
+  background-color: black;
+  color: white;
+  font-family: Roboto, sans-serif;
+}
+.company-history-content {
+  font-family: Noto Sans JP, sans-serif;
+}
+.company-history-content-img img {
+  max-width: 50%;
+}
+
+/* Services JS & Page. */
+.service-body {
+  font-family: Roboto, sans-serif;
+}
+.service-body-content {
+  font-family: Noto Sans JP, sans-serif;
+}
+.service-body-content span {
+  display: inline-block;
+}
+.body-button-last button {
+  background-color: #31a2ff;
+  color: white;
+  width: 18%;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  font-family: Roboto, sans-serif;
+}
+
+/* Partner JS & Page. */
+.partner-body {
+  font-family: Roboto, sans-serif;
+}
+.partner-body-content {
+  font-family: Noto Sans JP, sans-serif;
+}
+.partner-body-2 {
+  background-color: black;
+  color: white;
+}
+.partner-body-2-image img {
+  max-width: 25%;
+  border-radius: 5px;
+}
+.partner-body-3 {
+  color: black;
+}
+.partner-body-3-name {
+  font-family: Roboto, sans-serif;
+}
+.partner-body-button button {
+  background-color: #31a2ff;
+  color: white;
+  width: 18%;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  font-family: Roboto, sans-serif;
+}
+
+/* Careers JS */
+.career-body {
+  font-family: Roboto, sans-serif;
+}
+.career-body-content {
+  font-family: Noto Sans JP, sans-serif;
+}
+.career-body-button button {
+  background-color: #31a2ff;
+  color: white;
+  width: 40%;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  font-family: Roboto, sans-serif;
+}
+.career-body-linkSpan {
+  font-family: Noto Sans JP, sans-serif;
+}
+.career-body-linkSpan-2 {
+  color: #31a2ff;
+}
+.career-body-values1,
+.career-body-values2,
+.career-body-values3,
+.career-body-values4 {
+  font-family: Roboto, sans-serif;
+}
+.career-body-values1-image img,
+.career-body-values2-image img,
+.career-body-values3-image img,
+.career-body-values4-image img {
+  max-width: 80%;
+}
+.career-body-values1-content-p,
+.career-body-values2-content-p,
+.career-body-values3-content-p,
+.career-body-values4-content-p {
+  font-family: Noto Sans JP, sans-serif;
+}
+
+/* Support JS */
+.support-body {
+  background-color: #f2f3f5;
+}
+.support-body-content {
+  background-color: #fff;
+  border-radius: 5px;
+}
+.support-body-content-box {
+  border: 1px solid #dde2e4;
+  border-radius: 5px;
+}
+.support-body-content-box-2 {
+  border: 1px solid #dde2e4;
+  border-radius: 5px;
+  background-color: #f7f8fa;
+  display: block;
+}
+.support-box {
+  background-color: #dde2e4;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+/* Support Page.*/
+.support-content {
+  background-color: #f2f3f5;
+  display: flex;
+}
+.support-content-box {
+  background-color: #fff;
+  display: flex;
+  width: 150px;
+  height: 210px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.support-header {
+  border: none;
+  border-radius: 5px;
+  width: 150px;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.support-header:hover {
+  border: 2px solid #31a2ff;
+}
+.support-header.active {
+  border: 2px solid #31a2ff;
+}
+.support-header {
+  border: none;
+}
+.support-body {
+  background-color: #f2f3f5;
+}
+.support-body-content {
+  background-color: #fff;
+  border-radius: 5px;
+}
+.support-body-content-box {
+  border: 1px solid #dde2e4;
+  border-radius: 5px;
+}
+.support-body-content-box-2 {
+  border: 1px solid #dde2e4;
+  border-radius: 5px;
+  background-color: #f7f8fa;
+  display: block;
+}
+.support-box {
+  background-color: #dde2e4;
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  height: 210px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding-bottom: 0px;
+}

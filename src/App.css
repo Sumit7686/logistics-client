@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+img {
+  max-width: 100%;
+}
+.hs-100 {
+  height: 100vh;
+}
+.headerspace {
+  height: 100px;
+  width: 100%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+.navbar-light .navbar-nav .nav-link.active {
+  color: #ff3131;
+}

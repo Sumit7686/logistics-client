@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+.maindiv7 {
+  background-color: #1f1f1f;
+}
+.maindiv7-name {
+  color: #31a2ff;
+  font-size: 13.5px;
+}
+.maindiv7-first {
+  color: #818181;
+  font-size: 12px;
+}
+.maindiv7-first-email {
+  color: #fff;
+  font-size: 15px;
+}
+.maindiv7-secound ul {
+  color: #fff;
+  list-style-type: none;
+  font-size: 12px;
+}
+.maindiv7-last {
+  color: #fff;
+}
+.maindiv7-last-name {
+  font-size: 15px;
+}
+.maindiv7-last-middle {
+  font-size: 12.5px;
+}
+.maindiv7-last-icon {
+  font-size: 25px;
+}
