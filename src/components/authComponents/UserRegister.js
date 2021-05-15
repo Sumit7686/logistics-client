@@ -22,10 +22,10 @@ export default function UserRegister() {
       .then((result) => {
         if (result.data.isValid === true) {
           toast.success(result.data.message);
-          history.pushState("/Login");
+          history.push("/Login");
         } else {
           toast.error(result.data.message);
-          history.pushState("/UserRegister");
+          history.push("/UserRegister");
         }
       })
       .catch((err) => {

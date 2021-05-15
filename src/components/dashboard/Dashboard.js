@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 import "../../css/Dashboard.css";
+import { toast } from "react-toastify";
 
 export default function Dashboard() {
+  const history = useHistory();
+
+  const [orderId, setOrderId] = useState("");
+
+  const getOrderId = async () => {
+    const body = { orderId };
+
+    axios.post("http://localhost:5000/auth/order", body).then((result) => {
+      if (result.data.data.length !== 0) {
+        localStorage.setItem("TrackOrderId", orderId);
+        history.push("/OrderTrack");
+        toast.success(result.data.message);
+      } else {
+        toast.error(result.data.message);
+      }
+    });
+  };
+
   return (
     <div>
       <Navbar />
@@ -16,29 +37,27 @@ export default function Dashboard() {
               <div className="p-5">
                 <div
                   id="carouselExampleSlidesOnly"
-                  class="carousel slide"
+                  className="carousel slide"
                   data-ride="carousel"
                 >
-                  <div class="maindiv-sider carousel-inner">
-                    <div class="carousel-item active">
-                      <h2 className="text-white">
-                        70 HUBS, 85 CENTRES 
-                      </h2>
+                  <div className="maindiv-sider carousel-inner">
+                    <div className="carousel-item active">
+                      <h2 className="text-white">70 HUBS, 85 CENTRES</h2>
                     </div>
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                       <h2 className="text-white">50 TRUCKS DAILY</h2>
                     </div>
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                       <h2 className="text-white">4000 TEAMS MEMBERS</h2>
                     </div>
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                       <h2 className="text-white">8M ORDERS FULFILLED</h2>
                     </div>
-                    {/* <div class="carousel-item">
+                    {/* <div className="carousel-item">
                       <h2 className="text-white">5 CITIES SERVICES</h2>
                     </div> */}
                   </div>
-                </div> 
+                </div>
               </div>
             </div>
             <div className="col-md-7 col-sm-12">
@@ -75,11 +94,17 @@ export default function Dashboard() {
                         type="text"
                         className="form-control ml-2"
                         placeholder="Enter Mobile or tracking number"
+                        value={orderId}
+                        onChange={(e) => setOrderId(e.target.value)}
+                        required
                       />
                     </div>
                   </div>
                   <div className="col-md-4 col-sm-10">
-                    <button className="maindiv-input-button btn py-1 mb-2 rounded m-1">
+                    <button
+                      className="maindiv-input-button btn py-1 mb-2 rounded m-1"
+                      onClick={() => getOrderId()}
+                    >
                       Get OTP & Track
                     </button>
                   </div>
@@ -146,16 +171,16 @@ export default function Dashboard() {
             <div className="maindiv4-name h1 text-center mb-3">SERVICES</div>
             <div className="maindiv-content row align-items-center mb-5">
               <div>
-                PVCS LIMITED'S aim is to build the operating system for commerce in
-                India. We provide parcel transportation, warehousing, freight,
-                reverse logistics, cross-border and technology services to over
-                10000 customers including all of India’s largest e-commerce
-                companies and leading enterprises. Our supply chain platform and
-                logistics operations bring flexibility, breadth, efficiency and
-                innovation to our customers’ supply chain and logistics
-                operations. Our operations, infrastructure and technology enable
-                our customers to transact with us and our partners at the lowest
-                costs.
+                PVCS LIMITED'S aim is to build the operating system for commerce
+                in India. We provide parcel transportation, warehousing,
+                freight, reverse logistics, cross-border and technology services
+                to over 10000 customers including all of India’s largest
+                e-commerce companies and leading enterprises. Our supply chain
+                platform and logistics operations bring flexibility, breadth,
+                efficiency and innovation to our customers’ supply chain and
+                logistics operations. Our operations, infrastructure and
+                technology enable our customers to transact with us and our
+                partners at the lowest costs.
               </div>
 
               {/* <div className="w-100">
@@ -213,8 +238,8 @@ export default function Dashboard() {
         <div className="maindiv6-first row mt-4 mb-4 rounded">
           <div className="col-md-6 mt-1">
             <div className="maindiv6-first-content h2">
-              funding alert !<br></br> <br></br>Retail investors buys $25m worth of
-              shares in PVCS LIMITED
+              funding alert !<br></br> <br></br>Retail investors buys $25m worth
+              of shares in PVCS LIMITED
             </div>
           </div>
           <div className="maindiv6-first-img col-md-6 p-0">

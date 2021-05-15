@@ -1,14 +1,22 @@
 import React from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
-export default function UserNavbar() {
+export default function UserNavbar({ setAuth }) {
   const history = useHistory();
+
+  const logout = () => {
+    localStorage.removeItem("UserToken");
+    localStorage.removeItem("UserId");
+    toast.success("Logout");
+    setAuth(false);
+  };
 
   return (
     <div className="mb-5 pb-5">
       <nav className="navbar-shadow navbar navbar-expand-lg fixed-top navbar-light bg-white">
         <div className="container">
-          <a href="/" className="navbar-brand m-3">
+          <a href="/UserHome" className="navbar-brand m-3">
             <span onClick={() => history.push("/")}>
               <img
                 src="/photos/logo.jpg"
@@ -31,24 +39,6 @@ export default function UserNavbar() {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <div className="ml-auto">
               <ul className="header nav navbar-nav navbar-right">
-                <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                    to="/AboutUs"
-                    activeClassName="active"
-                  >
-                    Profile
-                  </NavLink>
-                </li>
-                <li className="nav-item active">
-                  <NavLink
-                    className="nav-link"
-                    to="/Services"
-                    activeClassName="active"
-                  >
-                    Order List
-                  </NavLink>
-                </li>
                 <li className="nav-item dropdown px-5 active">
                   <a
                     className="name-btn nav-link dropdown-toggle btn rounded p-2"
@@ -64,16 +54,14 @@ export default function UserNavbar() {
                     className="dropdown-menu text-center"
                     aria-labelledby="navbarDropdownMenuLink"
                   >
-                    <a href="/Login" className="dropdown-item">
-                      Login
+                    <a href="/UserProfile" className="dropdown-item">
+                      Profile
                     </a>
-                    <a href="/UserRegister" className="dropdown-item">
-                      UserRegister
-                    </a>
-                    <a href="/DeliveryBoyRegister" className="dropdown-item">
-                      DeliveryBoyRegister
-                    </a>
-                    <a href="/Login" className="dropdown-item">
+                    <a
+                      href="/Login"
+                      className="dropdown-item"
+                      onClick={() => logout()}
+                    >
                       Logout
                     </a>
                   </div>

@@ -1,12 +1,12 @@
 import "./App.css";
-import React, { Fragment } from "react";
+import React, { useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  // Redirect,
+  Redirect,
 } from "react-router-dom";
 
 // Components.
@@ -31,14 +31,106 @@ import Complaints from "./components/dashboard/support/Complaints";
 import ReturnRelatedQueries from "./components/dashboard/support/ReturnRelatedQueries";
 import ShipWithUs from "./components/dashboard/support/ShipWithUs";
 import Others from "./components/dashboard/support/Others";
+import OrderTrack from "./components/dashboard/OrderTrack";
+
+// User.
+import UserHome from "./components/User/UserHome";
+import UserProfile from "./components/User/UserProfile";
+import UserOrderList from "./components/User/UserOrderList";
+import UserCurrentOrder from "./components/User/UserCurrentOrder";
+import UserCompleteOrder from "./components/User/UserCompleteOrder";
 
 toast.configure();
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const setAuth = (boolean) => {
+    setIsAuthenticated(boolean);
+  };
+
+  async function isAuth() {
+    try {
+      const response = await fetch("http://localhost:5000/auth/is-verify", {
+        method: "GET",
+        headers: { token: localStorage.UserToken },
+      });
+
+      const parseRes = await response.json();
+      parseRes.message === true
+        ? setIsAuthenticated(true)
+        : setIsAuthenticated(false);
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
+
+  useEffect(() => {
+    isAuth();
+  }, []);
+
   return (
-    <Fragment>
+    <>
       <Router>
         <Switch>
+          {/* User */}
+          <Route
+            exact
+            path="/UserHome"
+            render={(props) =>
+              isAuthenticated ? (
+                <UserHome {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/UserHome" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/UserProfile"
+            render={(props) =>
+              isAuthenticated ? (
+                <UserProfile {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/UserProfile" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/UserOrderList"
+            render={(props) =>
+              isAuthenticated ? (
+                <UserOrderList {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/UserOrderList" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/UserCurrentOrder"
+            render={(props) =>
+              isAuthenticated ? (
+                <UserCurrentOrder {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/UserCurrentOrder" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/UserCompleteOrder"
+            render={(props) =>
+              isAuthenticated ? (
+                <UserCompleteOrder {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/UserCompleteOrder" />
+              )
+            }
+          />
+
+          {/* Auth. */}
           <Route exact path="/">
             <Dashboard />
           </Route>
@@ -50,6 +142,10 @@ function App() {
           </Route>
           <Route exact path="/ForgotPassword">
             <ForgotPassword />
+          </Route>
+
+          <Route exact path="/OrderTrack">
+            <OrderTrack />
           </Route>
 
           {/* About Us */}
@@ -114,7 +210,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </Fragment>
+    </>
   );
 }
 

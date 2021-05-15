@@ -98,9 +98,6 @@ export default function Navbar() {
                     <a href="/UserRegister" className="dropdown-item">
                       Register
                     </a>
-                    <a href="/Login" className="dropdown-item">
-                      Logout
-                    </a>
                   </div>
                 </li>
               </ul>

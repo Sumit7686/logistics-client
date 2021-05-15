@@ -17,19 +17,14 @@ export default function Login() {
 
     const body = { email, password };
 
-    axios
+    await axios
       .post("http://localhost:5000/auth/login", body)
       .then((result) => {
         if (result.data.isValid === true) {
+          history.push("/UserHome");
           toast.success(result.data.message);
-          localStorage.setItem("Id", result.data.id);
-          if (result.data.role === "deliveryBoy") {
-            history.push("/DeliveryBoyHome");
-          } else if (result.data.role === "user") {
-            history.push("/");
-          } else {
-            history.push("/Admin");
-          }
+          localStorage.setItem("UserId", result.data.id);
+          localStorage.setItem("UserToken", result.data.token);
         } else {
           toast.error(result.data.message);
         }
