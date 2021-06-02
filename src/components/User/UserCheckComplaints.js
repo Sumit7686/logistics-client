@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ReactHTMLTableToExcel from "react-html-table-to-excel";
+import React, { useState, useEffect } from "react";
 import UserNavbar from "../navbar/UserNavbar";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
-export default function UserCompleteOrder({ setAuth }) {
+export default function UserCheckComplaints({ setAuth }) {
+  const [id, setId] = useState("");
   const [value, setValue] = useState([]);
 
-  const id = localStorage.getItem("UserId");
+  const getComplaintsData = () => {
+    setId(localStorage.getItem("UserId"));
 
-  const getOrderData = () => {
     axios
-      .get(`http://localhost:5000/user/userPersoalOrder/${id}`)
+      .get(`http://localhost:5000/complaints/userPersonalComplaints/${id}`)
       .then((result) => {
         setValue(result.data.message);
       });
   };
 
   useEffect(() => {
-    getOrderData();
+    getComplaintsData();
   });
 
   return (
@@ -28,7 +29,7 @@ export default function UserCompleteOrder({ setAuth }) {
         <div className="d-flex align-items-center" data-aos="zoom-out">
           <div>
             <a
-              href="/UserOrderList"
+              href="/UserComplaints"
               style={{
                 textDecoration: "none",
                 fontSize: "45px",
@@ -43,7 +44,7 @@ export default function UserCompleteOrder({ setAuth }) {
               id="test-table-xls-button"
               className="download-table-xls-button"
               table="table-to-xls"
-              filename="user-complete-order"
+              filename="user-personal-complaints"
               sheet="tablexls"
               buttonText="Download as XLS"
             />
@@ -51,7 +52,7 @@ export default function UserCompleteOrder({ setAuth }) {
         </div>
 
         <h3 className="my-3 text-center" data-aos="zoom-out-down">
-          User Complete Order
+          Your Complaints
         </h3>
         <table
           id="table-to-xls"
@@ -60,28 +61,18 @@ export default function UserCompleteOrder({ setAuth }) {
         >
           <thead>
             <tr className="text-center">
-              <th scope="col">user_id</th>
-              <th scope="col">order_status</th>
-              <th scope="col">order_user_city</th>
-              <th scope="col">order_id</th>
-              <th scope="col">awb_number</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Description</th>
             </tr>
           </thead>
           <tbody>
             {value.length > 0 &&
               value.map((element, inx) => (
                 <tr key={inx} className="text-center">
-                  {element.order_status !== "Done" ? (
-                    ""
-                  ) : (
-                    <>
-                      <td>{element.user_id}</td>
-                      <td>{element.order_status}</td>
-                      <td>{element.order_user_city}</td>
-                      <td>{element.order_id}</td>
-                      <td>{element.awb_number}</td>
-                    </>
-                  )}
+                  <>
+                    <td>{element.subject}</td>
+                    <td>{element.description}</td>
+                  </>
                 </tr>
               ))}
           </tbody>

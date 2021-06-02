@@ -20,9 +20,11 @@ export default function UserRegister() {
     axios
       .post("http://localhost:5000/auth/registerUser", body)
       .then((result) => {
+        console.log(result.data.message);
         if (result.data.isValid === true) {
           toast.success(result.data.message);
-          history.push("/Login");
+          localStorage.setItem("otpID", result.data.id);
+          history.push("/Otp");
         } else {
           toast.error(result.data.message);
           history.push("/UserRegister");
@@ -110,7 +112,7 @@ export default function UserRegister() {
                         type="submit"
                         className="btn btn-lg btn-outline-success btn-block text-uppercase"
                       >
-                        Register
+                        Get Otp
                       </button>
                     </div>
                   </form>

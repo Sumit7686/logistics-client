@@ -32,18 +32,53 @@ export default function Footer() {
                   <MdEmail />
                 </span>
                 <span className="maindiv7-first-email">
-                  customer.support@delhivery.com
+                  customer.support@pvcs.com
                 </span>
               </div>
             </div>
             <div className="maindiv7-secound col-md-1 pl-4">
               <span>company</span>
               <ul className="mt-3">
-                <li className="my-3">About us</li>
-                <li className="my-3">Service</li>
-                <li className="my-3">Partner</li>
-                <li className="my-3">News</li>
-                <li className="my-3">Blog</li>
+                <li className="my-3">
+                  <a
+                    href="/AboutUs"
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    About us
+                  </a>
+                </li>
+                <li className="my-3">
+                  <a
+                    href="/Services"
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    Services
+                  </a>
+                </li>
+                <li className="my-3">
+                  <a
+                    href="/Partner"
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    Partner
+                  </a>
+                </li>
+                <li className="my-3">
+                  <a
+                    href="/AboutUs"
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    News
+                  </a>
+                </li>
+                <li className="my-3">
+                  <a
+                    href="/AboutUs"
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    Blog
+                  </a>
+                </li>
               </ul>
             </div>
             <div className="maindiv7-secound col-md-2 pl-5">

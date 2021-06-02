@@ -2,6 +2,8 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -11,9 +13,6 @@ import {
 
 // Components.
 import Dashboard from "./components/dashboard/Dashboard";
-import UserRegister from "./components/authComponents/UserRegister";
-import Login from "./components/authComponents/Login";
-import ForgotPassword from "./components/authComponents/ForgotPassword";
 import AboutUs from "./components/dashboard/AboutUs";
 import Services from "./components/dashboard/Services";
 import Fulfilment from "./components/dashboard/services/Fulfilment";
@@ -31,7 +30,12 @@ import Complaints from "./components/dashboard/support/Complaints";
 import ReturnRelatedQueries from "./components/dashboard/support/ReturnRelatedQueries";
 import ShipWithUs from "./components/dashboard/support/ShipWithUs";
 import Others from "./components/dashboard/support/Others";
-import OrderTrack from "./components/dashboard/OrderTrack";
+
+// Auth components.
+import UserRegister from "./components/authComponents/UserRegister";
+import Login from "./components/authComponents/Login";
+import ForgotPassword from "./components/authComponents/ForgotPassword";
+import Otp from "./components/authComponents/Otp";
 
 // User.
 import UserHome from "./components/User/UserHome";
@@ -39,6 +43,12 @@ import UserProfile from "./components/User/UserProfile";
 import UserOrderList from "./components/User/UserOrderList";
 import UserCurrentOrder from "./components/User/UserCurrentOrder";
 import UserCompleteOrder from "./components/User/UserCompleteOrder";
+import UserComplaints from "./components/User/UserComplaints";
+import UserAddComplaints from "./components/User/UserAddComplaints";
+import UserCheckComplaints from "./components/User/UserCheckComplaints";
+
+// ex.
+import OrderTrack from "./components/dashboard/OrderTrack";
 
 toast.configure();
 
@@ -67,12 +77,18 @@ function App() {
 
   useEffect(() => {
     isAuth();
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
     <>
       <Router>
         <Switch>
+          {/* OrderTrack */}
+          <Route exact path="/OrderTrack">
+            <OrderTrack />
+          </Route>
+
           {/* User */}
           <Route
             exact
@@ -129,6 +145,39 @@ function App() {
               )
             }
           />
+          <Route
+            exact
+            path="/UserComplaints"
+            render={(props) =>
+              isAuthenticated ? (
+                <UserComplaints {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/UserComplaints" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/UserAddComplaints"
+            render={(props) =>
+              isAuthenticated ? (
+                <UserAddComplaints {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/UserAddComplaints" />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/UserCheckComplaints"
+            render={(props) =>
+              isAuthenticated ? (
+                <UserCheckComplaints {...props} setAuth={setAuth} />
+              ) : (
+                <Redirect to="/UserCheckComplaints" />
+              )
+            }
+          />
 
           {/* Auth. */}
           <Route exact path="/">
@@ -143,9 +192,8 @@ function App() {
           <Route exact path="/ForgotPassword">
             <ForgotPassword />
           </Route>
-
-          <Route exact path="/OrderTrack">
-            <OrderTrack />
+          <Route exact path="/Otp">
+            <Otp />
           </Route>
 
           {/* About Us */}

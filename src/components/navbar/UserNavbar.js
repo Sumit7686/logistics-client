@@ -13,7 +13,7 @@ export default function UserNavbar({ setAuth }) {
   };
 
   return (
-    <div className="mb-5 pb-5">
+    <div className="mb-5 pb-5" data-aos="fade-down">
       <nav className="navbar-shadow navbar navbar-expand-lg fixed-top navbar-light bg-white">
         <div className="container">
           <a href="/UserHome" className="navbar-brand m-3">

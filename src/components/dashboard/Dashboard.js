@@ -20,7 +20,7 @@ export default function Dashboard() {
         history.push("/OrderTrack");
         toast.success(result.data.message);
       } else {
-        toast.error(result.data.message);
+        toast.error("Order ID is not valid.");
       }
     });
   };
@@ -69,21 +69,8 @@ export default function Dashboard() {
                     </ul>
                   </div>
                   <div className="maindiv-radio">
-                    <lable className="m-0">
-                      <input type="radio" className="m-2" name="radio" />
-                      <span>Mobile Number</span>
-                    </lable>
                     <lable className="m-2">
-                      <input type="radio" className="m-2" name="radio" />
-                      <span>Tracking ID</span>
-                    </lable>
-                    <lable className="m-2">
-                      <input type="radio" className="m-2" name="radio" />
-                      <span>Order ID / Ref ID</span>
-                    </lable>
-                    <lable className="m-2">
-                      <input type="radio" className="m-2" name="radio" />
-                      <span>LTL Shipment (LRN)</span>
+                      <span>Enter Your Order ID & Check Order Status.</span>
                     </lable>
                   </div>
                 </div>
@@ -93,7 +80,7 @@ export default function Dashboard() {
                       <input
                         type="text"
                         className="form-control ml-2"
-                        placeholder="Enter Mobile or tracking number"
+                        placeholder="Enter Order ID number."
                         value={orderId}
                         onChange={(e) => setOrderId(e.target.value)}
                         required
@@ -105,7 +92,7 @@ export default function Dashboard() {
                       className="maindiv-input-button btn py-1 mb-2 rounded m-1"
                       onClick={() => getOrderId()}
                     >
-                      Get OTP & Track
+                      Get Order Status
                     </button>
                   </div>
                 </div>
@@ -118,11 +105,6 @@ export default function Dashboard() {
                     </span>
                   </div>
                 </div>
-                {/* <div className="col-md-5 col-sm-12">
-                  <button className="maindiv-input-button btn py-2 mb-4 rounded">
-                    SET-UP BUSINESS ACCOUNT
-                  </button>
-                </div> */}
               </div>
             </div>
           </div>

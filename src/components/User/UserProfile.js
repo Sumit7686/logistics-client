@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserNavbar from "../navbar/UserNavbar";
+import "../../css/ProfileCard.css";
 
 export default function UserProfile({ setAuth }) {
   const [id, setId] = useState("");
@@ -36,7 +37,12 @@ export default function UserProfile({ setAuth }) {
     <>
       <UserNavbar setAuth={setAuth} />
 
-      <div className="py-4 items-center">
+      <div
+        className="px-3 py-3 items-center profileCard"
+        data-aos="flip-right"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <h2 className="text-center">User Profile Card</h2>
         <div className="profileCard">
           <img src="/photos/profile/1.jpg" alt="profile" className="w-100" />
@@ -48,12 +54,6 @@ export default function UserProfile({ setAuth }) {
           {/* <p className="title">Password : {password}</p> */}
           <button>Change Password</button>
         </div>
-      </div>
-
-      <div className="text-center mt-5 container">
-        <a href="/userHome" style={{ textDecoration: "none" }}>
-          <button>Back</button>
-        </a>
       </div>
     </>
   );

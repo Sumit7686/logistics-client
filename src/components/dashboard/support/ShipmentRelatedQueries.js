@@ -90,9 +90,7 @@ export default function ShipmentRelatedQueries() {
                       when you track your shipment on our website. However, in
                       case you require an urgent delivery, please write to us at
                       customer.
-                      <span style={{ color: "red" }}>
-                        support@delhivery.com
-                      </span>
+                      <span style={{ color: "red" }}>support@PVCS.com</span>
                       or raise your concern on WhatsApp, and we will try our
                       best to expedite your shipment.
                     </div>

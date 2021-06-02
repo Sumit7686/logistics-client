@@ -4,7 +4,7 @@ import "../../css/OrderTrack.css";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-export default function OrderTrack() {
+function Ex() {
   const history = useHistory();
 
   const [data, setData] = useState({
@@ -63,23 +63,6 @@ export default function OrderTrack() {
       <Navbar />
 
       <section className="status">
-        <div
-          className="d-flex align-items-center container pt-4"
-          data-aos="zoom-out"
-        >
-          <a
-            href="/"
-            style={{
-              textDecoration: "none",
-              fontSize: "45px",
-              color: "black",
-            }}
-            onClick={() => back()}
-          >
-            <i class="las la-angle-double-left"></i>
-          </a>
-        </div>
-
         <div className="container mx-auto">
           <div className="status-box w-75 mx-auto">
             <div className="d-flex items-center justify-content-between">
@@ -110,10 +93,12 @@ export default function OrderTrack() {
           </div>
         </div>
 
-        {/* <div className="container mt-5">
+        <div className="container mt-5">
           <button onClick={() => back()}>Back</button>
-        </div> */}
+        </div>
       </section>
     </>
   );
 }
+
+export default Ex;

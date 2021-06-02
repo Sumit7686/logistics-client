@@ -43,9 +43,7 @@ export default function Others() {
                     </div>
                     <div className="m-3 ml-5">
                       1. Click on
-                      <span style={{ color: "red" }}>
-                        www.delhivery.com/partner
-                      </span>
+                      <span style={{ color: "red" }}>www.PVCS.com/partner</span>
                       and sign up.
                     </div>
                     <div className="m-3 ml-5">
