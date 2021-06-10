@@ -69,7 +69,7 @@ export default function Otp() {
                       onChange={(e) => setOtp(e.target.value)}
                       required
                     />
-                    <label alt="Enter Name" placeholder="Name"></label>
+                    <label alt="Enter OTP" placeholder="OTP"></label>
                   </div>
 
                   <div className="d-flex flex-column">

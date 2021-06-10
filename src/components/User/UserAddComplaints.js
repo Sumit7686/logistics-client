@@ -40,6 +40,12 @@ export default function UserAddComplaints({ setAuth }) {
       >
         <div className="row">
           <div className="col-lg-10 col-xl-9 mx-auto">
+            <div
+              className="pt-3 justify-content-center"
+              style={{ color: "red", fontSize: "large", textAlign: "center" }}
+            >
+              Please add complaints carefully after that can't be deleted.
+            </div>
             <div className="card card-signin flex-row my-5">
               <div className="card-img-left d-none d-md-flex"></div>
               <div className="card-body">
