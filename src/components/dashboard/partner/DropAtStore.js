@@ -59,7 +59,7 @@ export default function DropAtStore() {
               4000 partners across 15+ metros and tier 1 cities in India.
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6" style={{marginTop:"7%", paddingLeft:"12%"}}>
             <img
               src="/photos/Drop at store.gif"
               alt="das"
@@ -68,7 +68,7 @@ export default function DropAtStore() {
           </div>
         </div>
       </div>
-      <div className="partner-body-2">
+      {/* <div className="partner-body-2">
         <div className="h1 text-center py-4 mb-0">TESTIMONIALS</div>
         <div className="container">
           <div
@@ -188,8 +188,8 @@ export default function DropAtStore() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="partner-body-3 container mt-4">
+      </div> */}
+      <div className="partner-body-3 container mt-5 pt-5">
         <div className="text-center">
           <div className="partner-body-3-name h3">
             GET STARTED IN THREE SIMPLE STEPS

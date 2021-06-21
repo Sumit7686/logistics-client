@@ -335,9 +335,11 @@
 }
 .support-header:hover {
   border: 2px solid #31a2ff;
+  text-decoration: none;
 }
 .support-header.active {
   border: 2px solid #31a2ff;
+  text-decoration: none;
 }
 .support-header {
   border: none;

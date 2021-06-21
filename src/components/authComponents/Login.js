@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import Navbar from "../navbar/Navbar";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../../css/Form.css";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -81,9 +81,9 @@ export default function Login() {
                       >
                         Login
                       </button>
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <Link to="/ForgotPassword">Forgot Password!</Link>
-                      </div>
+                      </div> */}
                     </div>
                   </form>
                 </div>

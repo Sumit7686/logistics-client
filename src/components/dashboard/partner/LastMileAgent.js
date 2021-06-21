@@ -62,7 +62,7 @@ export default function LastMileAgent() {
               years.
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6" style={{marginTop:"10%"}}>
             <img
               src="/photos/cosmos.gif"
               alt="cosmos"
@@ -72,7 +72,7 @@ export default function LastMileAgent() {
         </div>
       </div>
 
-      <div className="partner-body-2">
+      {/* <div className="partner-body-2">
         <div className="h1 text-center py-4 mb-0">TESTIMONIALS</div>
         <div className="container">
           <div
@@ -192,9 +192,9 @@ export default function LastMileAgent() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="partner-body-3 container mt-4">
+      <div className="partner-body-3 container mt-5 pt-5">
         <div className="text-center">
           <div className="partner-body-3-name h3">
             GET STARTED IN THREE SIMPLE STEPS

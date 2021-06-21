@@ -72,7 +72,7 @@ export default function Partner() {
         </div>
       </div>
 
-      <div className="partner-body-2">
+      {/* <div className="partner-body-2">
         <div className="h1 text-center py-4 mb-0">TESTIMONIALS</div>
         <div className="container">
         
@@ -194,9 +194,9 @@ export default function Partner() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="partner-body-3 container mt-4">
+      <div className="partner-body-3 container mt-5 pt-5">
         <div className="text-center">
           <div className="partner-body-3-name h3">
             GET STARTED IN THREE SIMPLE STEPS

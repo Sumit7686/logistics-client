@@ -33,7 +33,7 @@ export default function CrossBorder() {
               onClick={() => history.push("/CrossBorder")}
               className="p-1"
             >
-              DELHIVERY CROSS-BORDER
+              CROSS-BORDER
             </button>
             <button onClick={() => history.push("/E2e")} className="p-1">
               DELHIVERY E2E
