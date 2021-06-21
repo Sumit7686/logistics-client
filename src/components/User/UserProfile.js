@@ -52,7 +52,7 @@ export default function UserProfile({ setAuth }) {
           <p className="title">Contact : {contact} </p>
           <p className="title">Pincode :{pincode} </p>
           {/* <p className="title">Password : {password}</p> */}
-          <button>Change Password</button>
+          {/* <button>Change Password</button> */}
         </div>
       </div>
     </>
